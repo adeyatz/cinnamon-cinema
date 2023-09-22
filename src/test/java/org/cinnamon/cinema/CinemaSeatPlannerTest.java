@@ -9,10 +9,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CinemaSeatPlannerTest {
 
-    SeatPlanner planner;
+    private SeatPlanner planner;
     @BeforeEach
     void init (){
-        SeatPlanner planner = new CinemaSeatPlanner();
+        planner = new CinemaSeatPlanner();
     }
 
     @Test
@@ -20,6 +20,7 @@ class CinemaSeatPlannerTest {
         List<Seat> seats =  planner.getSeats(1,1);
 
         assertEquals(seats.size(), 1);
+        assertEquals(seats.get(0).getPosition(),"A1");
     }
 
     @Test

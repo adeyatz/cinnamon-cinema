@@ -8,7 +8,7 @@ public class CinemaSeatPlanner implements SeatPlanner {
     public List<Seat> getSeats(int rowCount, int seatCount) {
 
         if (rowCount == 0 || seatCount == 0)
-            throw new IllegalArgumentException("Cannot have 0 rows or seats");
+            throw new IllegalArgumentException("Cannot have 0 rowCount or seatCount");
 
         List <Seat> seats = new ArrayList<Seat>();
 

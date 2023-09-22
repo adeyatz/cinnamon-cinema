@@ -20,7 +20,7 @@ class SeatPlannerZigZagTest {
         List<Seat> seats =  planner.getSeats(1,1);
 
         assertEquals(seats.size(), 1);
-        assertEquals(seats.get(0).getPosition(),"A1");
+        assertEquals("A1", seats.get(0).getPosition());
     }
 
     @Test
@@ -39,8 +39,8 @@ class SeatPlannerZigZagTest {
 
         List <Seat> seats = planner.getSeats(1, 10);
 
-        assertEquals(seats.get (0).getPosition(),"A1");
-        assertEquals(seats.get (9).getPosition(),"A10");
+        assertEquals("A1", seats.get (0).getPosition());
+        assertEquals("A10", seats.get (9).getPosition());
     }
 
     @Test
@@ -49,8 +49,8 @@ class SeatPlannerZigZagTest {
         List <Seat> seats = planner.getSeats(2, 1);
 
         assertEquals(seats.size(),2);
-        assertEquals(seats.get (0).getPosition(),"A1");
-        assertEquals(seats.get (2).getPosition(),"B1");
+        assertEquals("A1", seats.get (0).getPosition());
+        assertEquals("B1", seats.get (1).getPosition());
     }
 
     @Test
@@ -59,22 +59,22 @@ class SeatPlannerZigZagTest {
         List <Seat> seats = planner.getSeats(2, 10);
 
         assertEquals(seats.size(),20);
-        assertEquals(seats.get (0).getPosition(),"A1");
-        assertEquals(seats.get (9).getPosition(),"A10");
-        assertEquals(seats.get (10).getPosition(),"B10");
-        assertEquals(seats.get (19).getPosition(),"B1");
+        assertEquals("A1",seats.get (0).getPosition());
+        assertEquals("A10", seats.get (9).getPosition());
+        assertEquals("B10", seats.get (10).getPosition());
+        assertEquals("B1", seats.get (19).getPosition());
     }
     @Test
     void testGetSeatsThreeRowsFiveSeats () {
         List <Seat> seats = planner.getSeats(3, 5);
 
         assertEquals(seats.size(),15);
-        assertEquals(seats.get (0).getPosition(),"A1");
-        assertEquals(seats.get (4).getPosition(),"A5");
-        assertEquals(seats.get (5).getPosition(),"B5");
-        assertEquals(seats.get (9).getPosition(),"B1");
-        assertEquals(seats.get (10).getPosition(),"C1");
-        assertEquals(seats.get (14).getPosition(),"C5");
+        assertEquals("A1", seats.get (0).getPosition());
+        assertEquals("A5", seats.get (4).getPosition());
+        assertEquals("B5", seats.get (5).getPosition());
+        assertEquals("B1", seats.get (9).getPosition());
+        assertEquals("C1",seats.get (10).getPosition());
+        assertEquals("C5",seats.get (14).getPosition());
     }
 
 }

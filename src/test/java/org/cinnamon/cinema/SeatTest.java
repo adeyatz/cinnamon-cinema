@@ -12,6 +12,13 @@ class SeatTest {
         assertEquals(seat.getPosition(), "A1");
     }
 
+    @Test void testSeatCreationLowerCase () {
+        Seat seat = new Seat("aA", 112);
+
+        assertEquals(seat.getPosition(), "AA112");
+    }
+
+
     @Test void testSeatIsNotAllocated () {
         Seat seat = new Seat("A", 1);
 

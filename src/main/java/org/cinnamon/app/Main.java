@@ -1,4 +1,4 @@
-package org.cinnamon.cinema;
+package org.cinnamon.app;
 
 public class Main {
     public static void main(String[] args) {

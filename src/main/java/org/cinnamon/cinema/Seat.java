@@ -1,17 +1,23 @@
 package org.cinnamon.cinema;
 
 public class Seat {
-    public Seat(String a, int i) {
+    private String row;
+    private int seatNumber;
+    private boolean isAllocated = false;
+    public Seat(String row, int seatNumber) {
+        this.row = row.toUpperCase();
+        this.seatNumber = seatNumber;
     }
 
     public String getPosition() {
-        return null;
+        return String.format("%s%d", row,seatNumber);
     }
 
     public boolean isAllocated() {
-        return false;
+        return isAllocated;
     }
 
     public void allocate() {
+        isAllocated = true;
     }
 }

@@ -3,7 +3,7 @@ package org.cinnamon.cinema;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CinemaSeatPlanner implements SeatPlanner {
+public class SeatPlannerZigZag implements SeatPlanner {
     @Override
     public List<Seat> getSeats(int rowCount, int seatCount) {
 

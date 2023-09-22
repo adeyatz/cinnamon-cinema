@@ -7,12 +7,12 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CinemaSeatPlannerTest {
+class SeatPlannerZigZagTest {
 
     private SeatPlanner planner;
     @BeforeEach
     void init (){
-        planner = new CinemaSeatPlanner();
+        planner = new SeatPlannerZigZag();
     }
 
     @Test

@@ -5,7 +5,7 @@ public class Seat {
     private int seatNumber;
     private boolean isAllocated = false;
     public Seat(String row, int seatNumber) {
-        System.out.format("%s%d\n",row, seatNumber);
+//        System.out.format("%s%d\n",row, seatNumber);
         this.row = row.toUpperCase();
         this.seatNumber = seatNumber;
     }

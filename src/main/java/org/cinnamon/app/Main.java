@@ -16,19 +16,26 @@ public class Main {
         System.out.println("Create cinema with " + rows + " rows, " + seatsPerRow + " seats per row");
         Cinema cinnemonCinema = new Cinema(rows,seatsPerRow);
 
-        List<Seat> seats;
+        List <Seat> emptySeats = cinnemonCinema.requestFreeSeats();
+        System.out.println("Empty Seats:");
+        emptySeats.stream().forEach(seat -> System.out.println(seat.getPosition()));
 
-        do {
+
+        while (true) {
             int size = getSeatNumBetweenOneAndThree.get();
             System.out.println("Ticket Request Size:" + size);
 
-            seats = cinnemonCinema.bookSeats (size);
+            List<Seat> seats = cinnemonCinema.bookSeats (size);
             if (seats == null) {
                 System.out.println("Failed to get seats");
+                break;
             } else {
                 seats.stream().forEach(seat -> System.out.println(seat.getPosition()));
             }
+        }
 
-        } while (seats != null);
+        System.out.println("Empty Seats Remaining:");
+        cinnemonCinema.requestFreeSeats().stream().forEach(seat -> System.out.println(seat.getPosition()));
+
     }
 }

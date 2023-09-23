@@ -27,7 +27,7 @@ public class Main {
 
             List<Seat> seats = cinnemonCinema.bookSeats (size);
             if (seats == null) {
-                System.out.println("Failed to get seats");
+                System.out.println("Failed to get " + size + " seats");
                 break;
             } else {
                 seats.stream().forEach(seat -> System.out.println(seat.getPosition()));

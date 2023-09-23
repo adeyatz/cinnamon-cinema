@@ -21,12 +21,12 @@ public class Cinema {
         return seats.stream().filter(seat -> seat.isAllocated()).toList();
     }
 
-    public List<Seat> bookSeats(int i) {
-        if (i <= 0 || i > 3 || i > requestFreeSeats().size())
+    public List<Seat> bookSeats(int numberOfSeats) {
+        if (numberOfSeats <= 0 || numberOfSeats > 3 || numberOfSeats > requestFreeSeats().size())
             return null;
 
         return seats.stream().filter(seat -> !seat.isAllocated())
-                .limit(i)
+                .limit(numberOfSeats)
                 .peek(seat ->seat.allocate())
                 .toList();
     }

@@ -18,7 +18,7 @@ public class SeatPlannerZigZag implements SeatPlanner {
     public List<Seat> getSeats(int rowCount, int seatCount) {
         int inc = 1;
 
-        if (rowCount == 0 || seatCount == 0)
+        if (rowCount <= 0 || seatCount <= 0)
             throw new IllegalArgumentException("Cannot have 0 rowCount or seatCount");
 
         List <Seat> seats = new ArrayList<Seat>();
@@ -26,9 +26,7 @@ public class SeatPlannerZigZag implements SeatPlanner {
         // For A1-A5,B1-B5 etc
         IntStream.range(0,rowCount)
                 .forEach(i -> getRowStream.apply(i, seatCount)
-                        .forEach(seat ->
-                            seats.add(
-                                    new Seat(getRowAsString.apply(i), seat))
+                        .forEach(seat -> seats.add(new Seat(getRowAsString.apply(i), seat))
                         ));
 
         return seats;

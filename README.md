@@ -1,5 +1,5 @@
 ## Installation
-Clone the Github repository [here](http:/github.com/adeyatz/cinnamon-cinema)
+Clone the Github repository [here](https://github.com/adeyatz/cinnamon-cinema)
 
 ## To run
 Build the application, then from Main.java, run main.java, of hit Shift f10

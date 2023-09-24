@@ -35,6 +35,17 @@ class SeatPlannerZigZagTest {
     }
 
     @Test
+    void testGetRowsGreaterThan26 () {
+
+        try {
+            List<Seat> seats = planner.getSeats(27, 1);
+            fail ("Test should throw IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e);
+        }
+    }
+
+    @Test
     void testGetSeatsOneRowTenSeats () {
 
         List <Seat> seats = planner.getSeats(1, 10);
@@ -53,6 +64,16 @@ class SeatPlannerZigZagTest {
         assertEquals("B1", seats.get (1).getPosition());
     }
 
+
+    @Test
+    void testGetSeats26Rows1Seat () {
+
+        List <Seat> seats = planner.getSeats(26, 1);
+
+        assertEquals(seats.size(),26);
+        assertEquals("A1", seats.get (0).getPosition());
+        assertEquals("Z1", seats.get (25).getPosition());
+    }
     @Test
     void testGetSeatsTwoRowsTenSeats () {
 

@@ -19,7 +19,10 @@ public class SeatPlannerZigZag implements SeatPlanner {
         int inc = 1;
 
         if (rowCount <= 0 || seatCount <= 0)
-            throw new IllegalArgumentException("Cannot have 0 rowCount or seatCount");
+            throw new IllegalArgumentException("Cannot have 0 or less for rowCount or seatCount");
+
+        if (rowCount > 26)
+            throw new IllegalArgumentException ("Rows numbers above 26 not yet supported");
 
         List <Seat> seats = new ArrayList<Seat>();
 

@@ -13,6 +13,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        System.out.println("START");
+
         System.out.println("Create cinema with " + rows + " rows, " + seatsPerRow + " seats per row");
         Cinema cinnemonCinema = new Cinema(rows,seatsPerRow);
 
@@ -37,5 +39,6 @@ public class Main {
         System.out.println("Empty Seats Remaining:");
         cinnemonCinema.requestFreeSeats().stream().forEach(seat -> System.out.println(seat.getPosition()));
 
+        System.out.println("END");
     }
 }
